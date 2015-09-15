@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "User visits home page" do
+feature "User visits homepage" do
   scenario "successfully" do
     visit root_path
 
