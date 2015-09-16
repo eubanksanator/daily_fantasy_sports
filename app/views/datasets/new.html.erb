@@ -1,0 +1,14 @@
+<h1>Upload a Salary and Rankings dataset</h1>
+<%= form_for @dataset, html: { multipart: true } do |f| %>
+  <p>
+    <%= f.label :salaries %>
+    <%= f.file_field :salaries %>
+  </p>
+  <p>
+    <%= f.label :rankings %>
+    <%= f.file_field :rankings %>
+  </p>
+  <p>
+    <%= f.submit "Import new dataset" %>
+  </p>
+<% end %>
