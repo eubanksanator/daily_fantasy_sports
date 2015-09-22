@@ -12,6 +12,8 @@ class Extraction
     get_player_info
   end
 
+  private
+
   def get_player_info
     players = []
     CSV.foreach(salaries) do |row|
@@ -22,12 +24,11 @@ class Extraction
         :salary           => salary(row),
         :price_per_point  => (salary(row) / projected_points(row)).to_f.round(1)
       }
+      # remove players who have missing projected points data
       players << player if player[:projected_points] != 0.0
     end
     players
   end
-
-  private
 
   def salary(row)
     row[2].to_i
