@@ -24,7 +24,7 @@ class Extraction
         :salary           => salary(row),
         :price_per_point  => (salary(row) / projected_points(row)).to_f.round(1)
       }
-      # remove players who have missing projected points data
+      # remove players who have missing data
       players << player if player[:projected_points] != 0.0
     end
     players
@@ -46,11 +46,4 @@ class Extraction
     players_rankings.delete("Player")
     players_rankings
   end
-
-
-
-
-  # from salaries = position, name, salary
-  # from rankings = projected_points
-  # price_per_point = salary / projected_points
 end

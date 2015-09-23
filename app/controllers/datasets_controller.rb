@@ -14,7 +14,7 @@ class DatasetsController < ApplicationController
     @dataset.rankings_filename = dataset_params[:rankings].original_filename if dataset_params[:rankings].present?
 
     if @dataset.save
-      redirect_to root_path, notice: "Datasets imported successfully!"
+      redirect_to datasets_path, notice: "Datasets imported successfully!"
     else
       redirect_to root_path, notice: "Must upload both a Salary and Rankings dataset!"
     end
