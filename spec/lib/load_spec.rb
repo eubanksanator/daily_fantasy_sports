@@ -48,8 +48,8 @@ RSpec.describe "Load" do
       @load.store_in_activerecord
 
       expect(Player.where(name: "Drew Brees", position: "QB", projected_points: 20.6)).to exist
-      expect(Player.where(name: "Matt Ryan", position: "QB", projected_points: 19.3, salary: 7300)).to exist
-      expect(Player.where(name: "Tony Romo", salary: 7100, price_per_point: 362.2)).to exist
+      expect(Player.where(name: "Matt Ryan", position: "QB", projected_points: 19.3)).to exist
+      expect(Player.where(name: "Tony Romo", price_per_point: 362.2)).to exist
       expect(Player.where(name: "Robert Griffin III")).not_to exist
     end
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150916122244) do
+ActiveRecord::Schema.define(version: 20150923004311) do
 
   create_table "datasets", force: :cascade do |t|
     t.string   "rankings_filename"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 20150916122244) do
     t.string   "salaries"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string   "name"
+    t.string   "position"
+    t.integer  "salary"
+    t.float    "projected_points"
+    t.float    "price_per_point"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
 end
