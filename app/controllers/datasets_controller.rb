@@ -1,6 +1,7 @@
 class DatasetsController < ApplicationController
   def index
     @datasets = Dataset.all
+    @players = Player.all
   end
 
   def new

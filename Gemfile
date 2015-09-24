@@ -4,6 +4,8 @@ gem 'rails', '4.2.3'
 gem 'sqlite3'
 gem 'carrierwave', '~> 0.9'
 gem 'pry'
+gem 'bootstrap-sass', '~> 3.3.5'
+gem 'sass-rails', '>= 3.2'
 
 group :development, :test do
   gem 'rubocop', '0.30.0'
