@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  resources :datasets, only: [:index, :new, :create]
+  resources :datasets, only: [:index, :show, :new, :create]
 end

@@ -4,4 +4,5 @@ class Dataset < ActiveRecord::Base
 
   validates :salaries, presence: true
   validates :rankings, presence: true
+  validates :name, presence: true
 end

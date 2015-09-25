@@ -8,14 +8,12 @@
 </head>
 <body>
 
-<% if !flash[:notice].blank? %>
-  <div>
-    <h3><%= flash[:notice] %></h3>
-  </div>
-<% end %>
-
 <div class="container">
   <div class="col-md-12">
+
+    <% if !flash[:notice].blank? %>
+      <div class="alert alert-info" role="alert"><p><%= flash[:notice] %></p></div>
+    <% end %>
 
     <%= yield %>
 

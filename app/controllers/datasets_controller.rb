@@ -4,6 +4,10 @@ class DatasetsController < ApplicationController
     @players = Player.all
   end
 
+  def show
+    @dataset = Dataset.find(params[:id])
+  end
+
   def new
     @dataset = Dataset.new
   end
@@ -15,15 +19,15 @@ class DatasetsController < ApplicationController
     @dataset.rankings_filename = dataset_params[:rankings].original_filename if dataset_params[:rankings].present?
 
     if @dataset.save
-      redirect_to datasets_path, notice: "Datasets imported successfully!"
+      redirect_to @dataset, notice: "Datasets imported successfully!"
     else
-      redirect_to root_path, notice: "Must upload both a Salary and Rankings dataset!"
+      redirect_to root_path, notice: "All form fields must be completed!"
     end
   end
 
   private
 
   def dataset_params
-    params.require(:dataset).permit(:salaries_filename, :rankings_filename, :salaries, :rankings)
+    params.require(:dataset).permit(:name, :salaries_filename, :rankings_filename, :salaries, :rankings)
   end
 end
