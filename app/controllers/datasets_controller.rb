@@ -21,7 +21,7 @@ class DatasetsController < ApplicationController
     if @dataset.save
       redirect_to @dataset, notice: "Datasets imported successfully!"
     else
-      redirect_to root_path, notice: "All form fields must be completed!"
+      redirect_to new_dataset_path, notice: "All form fields must be completed!"
     end
   end
 
