@@ -5,13 +5,23 @@
 <table class="table">
   <thead>
     <tr>
-      <th colspan="3">Player</th>
-      <th colspan="3">Position</th>
+      <th colspan="2">Player</th>
+      <th colspan="2">Position</th>
       <th colspan="2">Salary</th>
       <th colspan="2">Projected Points</th>
       <th colspan="2">Value</th>
     </tr>
   </thead>
-
+  <tbody>
+    <% @dataset.players.each do |player| %>
+      <tr>
+        <td colspan="2"><%= player.name %></td>
+        <td colspan="2"><%= player.position %></td>
+        <td colspan="2"><%= player.salary %></td>
+        <td colspan="2"><%= player.projected_points %></td>
+        <td colspan="2"><%= player.price_per_point %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
