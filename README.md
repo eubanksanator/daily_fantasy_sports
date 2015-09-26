@@ -27,6 +27,6 @@ Tests are using RSpec. Acceptance tests can be found in the features folder whil
 1. Refactor
 2. Consider edge cases in testing
 3. Add option to use scraped ESPN data for rankings/projected_points
-4. Add lineup permutation based on values
+4. Add lineup permutations based on values
 5. Player sorting via attributes
 
