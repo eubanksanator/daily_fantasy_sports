@@ -1,4 +1,6 @@
 class Dataset < ActiveRecord::Base
+  has_many :players
+
   mount_uploader :salaries, SalariesUploader
   mount_uploader :rankings, RankingsUploader
 

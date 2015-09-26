@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :dataset do
+    id 10
     name 'DraftKingsWeek1'
     rankings_filename 'example_rankings.csv'
     salaries_filename 'example_salaries.csv'

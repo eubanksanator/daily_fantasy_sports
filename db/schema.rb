@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150924151046) do
+ActiveRecord::Schema.define(version: 20150925232204) do
 
   create_table "datasets", force: :cascade do |t|
     t.string   "rankings_filename"
@@ -31,6 +31,9 @@ ActiveRecord::Schema.define(version: 20150924151046) do
     t.float    "price_per_point"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "dataset_id"
   end
+
+  add_index "players", ["dataset_id"], name: "index_players_on_dataset_id"
 
 end

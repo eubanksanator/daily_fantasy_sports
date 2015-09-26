@@ -15,7 +15,7 @@ RSpec.describe PlayersLoader do
       expect(Dataset.where(name: "DraftKingsWeek1")).to exist
       expect(Player.where(name: "Drew Brees")).to exist
       expect(Player.where(name: "Tony Romo")).to exist
-      expect(Player.where(name: "Andrew Luck")).to exist
+      expect(Player.where(name: "Andrew Luck", dataset_id: 10)).to exist
     end
   end
 end

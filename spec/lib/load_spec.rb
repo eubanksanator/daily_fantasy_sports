@@ -32,9 +32,10 @@ RSpec.describe "Load" do
                             :salary => 7100,
                             :price_per_point => 362.2
                           }] }
+  let(:dataset) { FactoryGirl.create(:dataset) }
 
   before :each do
-    @load = Load.new(transformation)
+    @load = Load.new(dataset, transformation)
   end
 
   describe "#new" do
@@ -49,7 +50,7 @@ RSpec.describe "Load" do
 
       expect(Player.where(name: "Drew Brees", position: "QB", projected_points: 20.6)).to exist
       expect(Player.where(name: "Matt Ryan", position: "QB", projected_points: 19.3)).to exist
-      expect(Player.where(name: "Tony Romo", price_per_point: 362.2)).to exist
+      expect(Player.where(name: "Tony Romo", price_per_point: 362.2, dataset_id: 10)).to exist
       expect(Player.where(name: "Robert Griffin III")).not_to exist
     end
   end

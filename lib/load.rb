@@ -1,5 +1,6 @@
 class Load
-  def initialize(transformation)
+  def initialize(dataset, transformation)
+    @dataset = dataset
     @transformation = transformation
   end
 
@@ -11,7 +12,11 @@ class Load
       projected_points = player[:projected_points]
       price_per_point  = player[:price_per_point]
 
-      Player.find_or_create_by(name: name, position: position, salary: salary, projected_points: projected_points, price_per_point: price_per_point)
+      Player.find_or_create_by(dataset_id: dataset.id, name: name, position: position, salary: salary, projected_points: projected_points, price_per_point: price_per_point)
     end
   end
+
+  private
+
+  attr_reader :dataset
 end
