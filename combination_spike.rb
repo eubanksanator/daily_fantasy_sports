@@ -72,5 +72,6 @@ puts "QB + RB(3)"
 puts "=========="
 
 flattened = lc.get_QB_and_RB_combinations.map { |combo| combo.flatten }
-flattened.each { |combo| puts combo[0].name + " " + combo[1].name + " " + combo[2].name + " " + combo[3].name }
-puts flattened.count
+time =  Benchmark.realtime { flattened.each { |combo| puts combo[0].name + " " + combo[1].name + " " + combo[2].name + " " + combo[3].name } }
+puts "Time elapsed is #{time*1000} milliseconds."
+# puts Benchmark.measure { flattened.count }
