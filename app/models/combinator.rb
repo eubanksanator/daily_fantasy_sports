@@ -16,6 +16,6 @@ class Combinator
   end
 
   def output_data
-    data.each { |player| puts player.name }
+    data
   end
 end

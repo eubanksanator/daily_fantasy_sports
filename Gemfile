@@ -7,6 +7,7 @@ gem 'pry'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'sass-rails', '>= 3.2'
 gem 'combinatorics'
+gem 'seed_dump'
 
 group :development, :test do
   gem 'rubocop', '0.30.0'

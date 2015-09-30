@@ -15,6 +15,10 @@ RSpec.configure do |config|
     DatabaseCleaner.start
   end
 
+  config.before(:each) do
+    Rails.application.load_seed
+  end
+
   config.after(:each) do
     DatabaseCleaner.clean
   end
