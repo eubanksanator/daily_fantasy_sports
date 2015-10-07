@@ -49,8 +49,5 @@ RSpec.describe "Transformation" do
       expect(@transformation.output).to eq(result)
     end
   end
-
-
-
 end
 
